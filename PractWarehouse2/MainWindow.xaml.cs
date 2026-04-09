@@ -1,28 +1,16 @@
 ﻿using PractWarehouse2.ModelsDB;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PractWarehouse2
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
-
-       
 
         private void Window_Initialized(object sender, EventArgs e)
         {
@@ -154,8 +142,6 @@ namespace PractWarehouse2
                 using (Pract4Warehouse1Context _db = new Pract4Warehouse1Context())
                 {
                     var products = _db.Products.ToList();
-
-                    // Если есть поисковый запрос
                     if (!string.IsNullOrEmpty(tbSearch.Text))
                     {
                         products = products.Where(p => p.ProductName.Contains(tbSearch.Text)).ToList();

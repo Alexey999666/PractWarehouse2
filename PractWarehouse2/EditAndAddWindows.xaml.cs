@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PractWarehouse2
 {
-    /// <summary>
-    /// Логика взаимодействия для EditAndAddWindows.xaml
-    /// </summary>
     public partial class EditAndAddWindows : Window
     {
         public EditAndAddWindows()
@@ -73,7 +70,7 @@ namespace PractWarehouse2
                 {
                     if (Data.product != null)
                     {
-                        // Редактирование
+                      
                         var product = _db.Products.Find(Data.product.ProductId);
                         if (product != null)
                         {
